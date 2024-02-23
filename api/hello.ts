@@ -8,7 +8,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const version = await sql`SELECT version();`
   return res.json({
     hostname: new URL(process.env.DATABASE_URL).hostname,
-    version,
-    rows
+    version
   })
 }
